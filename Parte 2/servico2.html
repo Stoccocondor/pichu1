@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produto 2 - Desenvolvimento de E-commerce</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Produto 1 - Desenvolvimento de E-commerce</title>
+    <link rel="stylesheet" href="servico2_layout.css"> <!-- Atualizado o nome do arquivo de CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Cabeçalho -->
@@ -19,15 +21,15 @@
         </div>
     </header>
 
-    <!-- Conteúdo do Projeto 1 -->
+    <!-- Conteúdo do Produto 1 -->
     <section class="produto">
         <div class="container">
             <!-- Foto principal -->
             <div class="produto-imagem">
-                <img src="ecommerce-imagem.jpg" alt="Exemplo de Loja Online">
+                <img src="imagens/foto1.jpg" alt="Exemplo de Loja Online">
             </div>
 
-            <!-- Informações do produto -->
+            <!-- Informações do Produto -->
             <div class="produto-info">
                 <h2>Desenvolvimento de E-commerce</h2>
                 <p class="categoria">Categoria: Lojas Online</p>
@@ -39,23 +41,28 @@
         </div>
     </section>
 
-    <!-- Carrossel de fotos -->
+    <!-- Carrossel de Fotos -->
     <section class="carrossel">
         <div class="container">
             <h3>Fotos do Projeto</h3>
-            <div class="carrossel-imagens">
-                <div class="carrossel-item">
-                    <img src="foto1.jpg" alt="Página inicial da loja">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="imagens/foto1.jpg" alt="Página inicial da loja">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="imagens/foto2.jpg" alt="Processo de pagamento">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="imagens/foto3.jpg" alt="Página de produto">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="imagens/foto4.jpg" alt="Carrinho de compras">
+                    </div>
                 </div>
-                <div class="carrossel-item">
-                    <img src="foto2.jpg" alt="Processo de pagamento">
-                </div>
-                <div class="carrossel-item">
-                    <img src="foto3.jpg" alt="Página de produto">
-                </div>
-                <div class="carrossel-item">
-                    <img src="foto4.jpg" alt="Carrinho de compras">
-                </div>
+                <!-- Controles do carrossel -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
@@ -63,5 +70,23 @@
     <footer>
         <p>&copy; 2025 Meu Portfólio. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Scripts do Swiper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1, /* Exibe apenas 1 slide de cada vez */
+            spaceBetween: 0, /* Sem espaço entre os slides */
+            loop: true, /* Loop infinito */
+            autoplay: {
+                delay: 3000, /* Tempo de transição de cada slide */
+                disableOnInteraction: false, /* Não desabilita a transição ao interagir */
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
 </body>
 </html>
