@@ -1,0 +1,70 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Seções */
+section {
+    padding: 3rem 10%;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+}
+
+p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Cartões */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+/* Botão */
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background-color: #0073e6;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #0073e6;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    section {
+        padding: 2rem 5%;
+    }
+}
