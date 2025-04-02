@@ -67,7 +67,6 @@ header nav a:hover {
   width: 80%;
   max-width: 1200px;
   border-radius: 10px;
-  background-color: #ffffff;
   border: 10px solid #e5e5e5;
   transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
@@ -75,7 +74,7 @@ header nav a:hover {
 .produto.dark-theme {
   background-color: #444;
   border: 10px solid #555;
-  color: #fff;
+  color: #f5f5f5; /* Torna o texto mais claro no tema escuro */
 }
 
 /* Ajuste de layout para produto */
@@ -108,6 +107,10 @@ header nav a:hover {
   color: #2c3e50;
 }
 
+.produto-info.dark-theme h2 {
+  color: #ecf0f1; /* Título mais claro no tema escuro */
+}
+
 .produto-info .categoria,
 .produto-info .ano {
   font-size: 16px;
@@ -115,10 +118,19 @@ header nav a:hover {
   color: #7f8c8d;
 }
 
+.produto-info.dark-theme .categoria,
+.produto-info.dark-theme .ano {
+  color: #bdc3c7; /* Cor mais clara para o texto no tema escuro */
+}
+
 .produto-info .descricao {
   font-size: 18px;
   color: #34495e;
   line-height: 1.8;
+}
+
+.produto-info.dark-theme .descricao {
+  color: #ecf0f1; /* Descrição mais clara no tema escuro */
 }
 
 /* Estilo do carrossel */
@@ -130,7 +142,6 @@ header nav a:hover {
   margin: 40px auto;
   border-radius: 10px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
   border: 10px solid #e5e5e5;
   overflow: hidden;
   transition: background-color 0.3s, border 0.3s;
@@ -152,7 +163,7 @@ header nav a:hover {
 }
 
 .carrossel.dark-theme h3 {
-  color: #ecf0f1;
+  color: #ecf0f1; /* Cor mais clara para o título no carrossel no tema escuro */
 }
 
 .swiper-container {
@@ -174,7 +185,6 @@ header nav a:hover {
 
 /* Adicionando media query para telas menores */
 @media (max-width: 768px) {
-  /* Ajuste de padding da seção */
   section {
     padding: 2rem 5%;
   }
@@ -193,7 +203,6 @@ header nav a:hover {
     width: 100%;  
   }
 
-  /* Ajusta o layout da seção de produto */
   .produto .container {
     flex-direction: column;
     align-items: center;
@@ -208,9 +217,8 @@ header nav a:hover {
     text-align: center; 
   }
 
-  /* Ajusta o layout do cabeçalho */
   header .container {
-    flex-direction: column; /* Alinha os elementos na vertical em telas pequenas */
+    flex-direction: column;
     text-align: center; 
   }
 
