@@ -3,25 +3,33 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 /* Definindo fontes globais */
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #e5e5e5;  /* Fundo cinza neutro */
+  background-color: #f5f5f5;
   color: #333;
-  padding: 0;
-  margin: 0;
-  border-left: 30px solid #d3d3d3;  /* Bordas laterais cinza */
-  border-right: 30px solid #d3d3d3; /* Bordas laterais cinza */
+  transition: background-color 0.3s, color 0.3s; /* Adiciona transição suave */
+}
+
+/* Tema escuro */
+body.dark-theme {
+  background-color: #333;
+  color: #f5f5f5;
 }
 
 /* Estilo do cabeçalho */
 header {
-  background-color: #2c3e50; /* Cabeçalho escuro */
+  background-color: #2c3e50;
   color: white;
   padding: 20px 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header.dark-theme {
+  background-color: #1a1a1a;
 }
 
 header .container {
@@ -53,16 +61,24 @@ header nav a:hover {
 /* Estilo da seção de Produto */
 .produto {
   background-color: #fff;
-  padding: 60px 0;
+  padding: 60px 10%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
   width: 80%;
   max-width: 1200px;
   border-radius: 10px;
   background-color: #ffffff;
-  border: 10px solid #e5e5e5; /* Borda cinza claro */
+  border: 10px solid #e5e5e5;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
+.produto.dark-theme {
+  background-color: #444;
+  border: 10px solid #555;
+  color: #fff;
+}
+
+/* Ajuste de layout para produto */
 .produto .container {
   display: flex;
   justify-content: center;
@@ -71,14 +87,16 @@ header nav a:hover {
   flex-wrap: wrap;
 }
 
+/* Produto Imagem */
 .produto-imagem img {
   max-width: 100%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  max-width: 500px; /* Limitar o tamanho da imagem */
+  max-width: 500px;
 }
 
+/* Produto Info */
 .produto-info {
   flex: 1;
   max-width: 600px;
@@ -107,14 +125,20 @@ header nav a:hover {
 .carrossel {
   background-color: #ecf0f1;
   padding: 40px 0;
-  width: 50%;  /* Ajustar a largura do carrossel */
-  height: 300px;  /* Ajustar a altura do carrossel */
+  width: 50%;
+  height: 300px;
   margin: 40px auto;
   border-radius: 10px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Sombra no carrossel */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
-  border: 10px solid #e5e5e5; /* Borda cinza claro no carrossel */
-  overflow: hidden;  /* Ocultar imagens não visíveis */
+  border: 10px solid #e5e5e5;
+  overflow: hidden;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+.carrossel.dark-theme {
+  background-color: #555;
+  border: 10px solid #444;
 }
 
 .carrossel .container {
@@ -127,14 +151,18 @@ header nav a:hover {
   color: #34495e;
 }
 
+.carrossel.dark-theme h3 {
+  color: #ecf0f1;
+}
+
 .swiper-container {
-  width: 50%;  /* Tamanho ajustado para o carrossel */
-  height: 50%;  /* A altura do carrossel será 100% da altura definida */
-  margin: 0 auto;  /* Centraliza o carrossel */
+  width: 50%;  
+  height: 50%;  
+  margin: 0 auto; 
 }
 
 .swiper-slide {
-  width: 50%;  /* Garante que cada slide ocupe 100% da área visível */
+  width: 50%;
 }
 
 .swiper-slide img {
@@ -146,32 +174,52 @@ header nav a:hover {
 
 /* Adicionando media query para telas menores */
 @media (max-width: 768px) {
+  /* Ajuste de padding da seção */
+  section {
+    padding: 2rem 5%;
+  }
+
   .carrossel {
-    width: 90%;  /* Ajusta a largura do carrossel para telas menores */
-    height: 200px;  /* Ajusta a altura para telas menores */
+    width: 90%; 
+    height: 200px; 
   }
 
   .swiper-container {
-    width: 100%;  /* Ajusta a largura do swiper para 100% */
-    height: 100%;  /* Ajusta a altura do swiper para 100% */
+    width: 100%;  
+    height: 100%;  
   }
 
   .swiper-slide {
-    width: 100%;  /* Cada slide ocupará 100% da largura da tela */
+    width: 100%;  
   }
 
-  /* Ajusta o layout da seção de produto em telas menores */
+  /* Ajusta o layout da seção de produto */
   .produto .container {
-    flex-direction: column; /* Empilha as imagens e informações em telas pequenas */
-    align-items: center; /* Centraliza as colunas */
+    flex-direction: column;
+    align-items: center;
   }
 
   .produto-imagem img {
-    max-width: 80%; /* Ajusta o tamanho da imagem */
+    max-width: 80%; 
   }
 
   .produto-info {
-    max-width: 100%; /* Faz com que as informações do produto ocupem toda a largura */
-    text-align: center; /* Centraliza o texto */
+    max-width: 100%; 
+    text-align: center; 
+  }
+
+  /* Ajusta o layout do cabeçalho */
+  header .container {
+    flex-direction: column; /* Alinha os elementos na vertical em telas pequenas */
+    text-align: center; 
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  header nav a {
+    font-size: 16px;
+    margin-left: 10px;
   }
 }
