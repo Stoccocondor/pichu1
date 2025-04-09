@@ -3,48 +3,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
+/* Corpo da página */
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    padding: 0 10px;
-    transition: background-color 0.3s, color 0.3s;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    line-height: 1.6;
 }
 
-:root {
-    --background-color: #f5f5f5;
-    --text-color: #333;
-    --header-bg-color: #fff;
-    --button-bg-color: #0073e6;
-    --footer-bg-color: #0073e6;
-    --section-bg-color: #fff;
-}
-
-body.dark-theme {
-    --background-color: #333;
-    --text-color: #f5f5f5;
-    --header-bg-color: #444;
-    --button-bg-color: #4d90fe;
-    --footer-bg-color: #1a1a1a;
-    --section-bg-color: #444;
-}
-
+/* Estilos do header */
 header {
-    width: 100%;
-    max-width: 900px;
-    text-align: center;
-    padding: 2rem 0;
-    background-color: var(--header-bg-color);
+    background-color: #000;
+    color: white;
+    padding: 20px 0;
 }
 
 .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,112 +34,185 @@ header {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin-bottom: 1rem;
+    margin-bottom: 15px;
 }
 
 h1 {
-    margin: 1rem 0;
+    margin: 10px 0;
     font-size: 2rem;
 }
 
 p {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin-bottom: 20px;
 }
 
-section {
-    width: 100%;
-    max-width: 900px;
-    padding: 3rem 10%;
+.theme-toggle {
+    background-color: #000;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: #444;
+}
+
+/* Seção sobre mim */
+.sobre-mim {
+    padding: 40px 20px;
     text-align: center;
-    background-color: var(--section-bg-color);
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-mim h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.sobre-mim p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Seção de serviços */
+.servicos {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.servicos h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .servicos-container {
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
     flex-wrap: wrap;
-    margin-top: 2rem;
-    width: 100%;
-}
-
-.servico-card {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
+    justify-content: center;
+    gap: 15px;
 }
 
 .servico-btn {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 1rem 2rem;
-    background-color: var(--button-bg-color);
+    background-color: black;
     color: white;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
     text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.servico-btn:hover {
+    background-color: #444;
+}
+
+/* Seção de Contato */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+}
+
+form label {
+    font-size: 1rem;
+}
+
+form input, form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: var(--footer-bg-color);
+form button {
+    padding: 10px 20px;
+    background-color: black;
     color: white;
-    width: 100%;
-    position: relative;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
+form button:hover {
+    background-color: #444;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: white;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-    section {
-        padding: 2rem 5%;
+    .header-content {
+        padding: 20px;
     }
 
     .servicos-container {
-        justify-content: center;
-        gap: 1rem;
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .servico-card {
-        width: 100%;
-        max-width: 300px;
+    .perfil-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .theme-toggle {
+        font-size: 0.9rem;
+    }
+
+    .sobre-mim h2, .servicos h2 {
+        font-size: 1.5rem;
     }
 
     .servico-btn {
-        width: 100%;
-        max-width: 250px;
-        margin: 10px 0;
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+
+    form {
+        padding: 15px;
     }
 }
 
 @media (max-width: 480px) {
-    section {
-        padding: 1rem 5%;
+    h1 {
+        font-size: 1.4rem;
     }
 
-    .servico-card {
-        width: 100%;
-        max-width: 250px;
+    .sobre-mim h2, .servicos h2 {
+        font-size: 1.3rem;
     }
 
-    footer {
-        font-size: 12px;
-        padding: 6px;
+    .servico-btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
     }
-}
 
-.theme-toggle-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 10px;
-    background-color: transparent;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--text-color);
+    form button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
 }
